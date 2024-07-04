@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to right, #0f0c29, #302b63, #24243e)',
+      },
+      fontFamily:{
+        roboto:"'Roboto',sans-serif"
+      }
+    },
   },
   plugins: [
     require('daisyui'),

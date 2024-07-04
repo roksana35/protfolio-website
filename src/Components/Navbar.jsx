@@ -1,11 +1,21 @@
-import React from 'react';
+
+import {  NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const navlink=<>
+  <li className='font-bold md:text-white font-roboto'><NavLink to='/' className={({isActive})=>isActive?'text-white font-bold':'font-bold'} >Home</NavLink></li>
+  <li className='font-bold md:text-white font-roboto'  ><NavLink to='/skill' className={({isActive})=>isActive?'text-white font-bold':'font-bold'}>Skill</NavLink></li>
+  <li className='font-bold md:text-white font-roboto'><NavLink to='/project'>Project</NavLink></li>
+  <li className='font-bold md:text-white font-roboto'><NavLink to='/education'>Education</NavLink></li>
+  <li className='font-bold md:text-white font-roboto'><NavLink to='/expe' className={({isActive})=>isActive?'text-white font-bold':'font-bold'}>Experience</NavLink></li>
+  <li className='font-bold md:text-white font-roboto'><NavLink to='/contact' className={({isActive})=>isActive?'text-white font-bold':'font-bold'}>Contact</NavLink></li>
+  
+  </>
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-custom-gradient  top-0 h-[78px] sticky z-50 ">
     <div className="navbar-start">
       <div className="dropdown">
-        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+        <div tabIndex={0} role="button" className="btn btn-white lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -22,37 +32,17 @@ const Navbar = () => {
         <ul
           tabIndex={0}
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li><a>Item 1</a></li>
-          <li>
-            <a>Parent</a>
-            <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </li>
-          <li><a>Item 3</a></li>
+          {navlink}
         </ul>
       </div>
-      <a className="btn btn-ghost text-xl">daisyUI</a>
+      <a className="btn btn-ghost text-xl font-roboto text-white">Roksana Akter</a>
     </div>
-    <div className="navbar-center hidden lg:flex">
+    <div className="navbar-end hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
-        <li><a>Item 1</a></li>
-        <li>
-          <details>
-            <summary>Parent</summary>
-            <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a>Item 3</a></li>
+       {navlink}
       </ul>
     </div>
-    <div className="navbar-end">
-      <a className="btn">Button</a>
-    </div>
+    
   </div>
   );
 };
