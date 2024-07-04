@@ -7,11 +7,19 @@ import { FaFacebook } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import React, { useRef } from 'react';
+import { Cursor, Typewriter, useTypewriter } from 'react-simple-typewriter'
 // import emailjs from '@emailjs/browser';
 const Contact = () => {
+    const [text]=useTypewriter({
+    words:['together!'],
+        loop:0,
+        typeSpeed:120,
+        deleteSpeed:80
+    })
     const form = useRef();
 
     const sendEmail = (e) => {
+        
       e.preventDefault();
   
       emailjs
@@ -27,15 +35,18 @@ const Contact = () => {
             alert( 'message not send');
           },
         );
-        e.target.reset()
+        e.target.reset();
+        
     };
 
   return (
     <section className="py-16 bg-custom-gradient  text-white">
+        <h2 className=" md:flex-1 md:text-4xl font-bold font-roboto mx-auto text-center mb-8  ">Let’s work <span>{text}</span><Cursor></Cursor></h2>
       <div className="container sm:flex-cl md:flex gap-6 md:gap-16 bg-gradient-to-r from-[#2c1636] to-[#2c1636]  shadow-lg rounded-lg py-10 px-6 mx-auto ">
-          
+      
           <div className="md:flex-1 ">
-          <h2 className=" md:flex-1 md:text-4xl font-bold font-roboto mx-auto text-center mb-8  ">Let’s work together!</h2>
+          
+          
           <form className="card-body" ref={form} onSubmit={sendEmail}>
         <div className="form-control">
         <label className="label">

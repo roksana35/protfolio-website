@@ -9,11 +9,11 @@ const Banner = () => {
       <div className="container mx-auto md:m-10 md:p-8 relative z-10">
         <div className="flex flex-wrap items-center">
           <div className="w-full md:w-1/2">
-            <div className="hero-content-box p-6">
+            <div className="hero-content-box space-y-5 p-6">
               <span className="text-4xl font-roboto font-bold mb-2">
                 I am Roksana Akter
               </span>
-              <h1 className=" text-2xl font-bold mb-4">Web Developer </h1>
+              
               <div className=" md:hidden text-center mb-4">
                 <img decoding="async" src="https://i.ibb.co/3Mq8X5N/Whats-App-Image-2024-07-02-at-1-46-55-PM.jpg" alt="ThemeJunction" className="rounded-full shadow-2xl max-w-xs mx-auto" />
               </div>

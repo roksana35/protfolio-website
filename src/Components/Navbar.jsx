@@ -1,10 +1,12 @@
 
 import {  NavLink } from 'react-router-dom';
 
+
 const Navbar = () => {
   const navlink=<>
   <li className='font-bold md:text-white font-roboto'><NavLink to='/' className={({isActive})=>isActive?'text-white font-bold':'font-bold'} >Home</NavLink></li>
-  <li className='font-bold md:text-white font-roboto'  ><NavLink to='/skill' className={({isActive})=>isActive?'text-white font-bold':'font-bold'}>Skill</NavLink></li>
+  <li className='font-bold md:text-white font-roboto'><NavLink to='/skill' className={({isActive})=>isActive?'text-white font-bold':'font-bold'} >Skills</NavLink></li>
+  
   <li className='font-bold md:text-white font-roboto'><NavLink to='/project'>Project</NavLink></li>
   <li className='font-bold md:text-white font-roboto'><NavLink to='/education'>Education</NavLink></li>
   
