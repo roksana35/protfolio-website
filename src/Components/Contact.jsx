@@ -6,68 +6,58 @@ import { MdEmail } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import React, { useRef } from 'react';
+// import emailjs from '@emailjs/browser';
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    fname: '',
-    lname: '',
-    email: '',
-    phone: '',
-    services: '',
-    message: ''
-  });
+    const form = useRef();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-      .then((result) => {
-        alert('Message sent successfully!');
-      }, (error) => {
-        alert('Failed to send the message, please try again.');
-      });
-
-    setFormData({
-      fname: '',
-      lname: '',
-      email: '',
-      phone: '',
-      services: '',
-      message: ''
-    });
-  };
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        // .sendForm('service_zrwxsbs', 'template_vfud5vg', form.current, {
+        //   publicKey: 'zKRMraun3NqJ1k0iD',
+        // })
+        .sendForm('service_zrwxsbs', 'template_vfud5vg', form.current, 'zKRMraun3NqJ1k0iD')
+        .then(
+          () => {
+            alert('Message Send Successfully');
+          },
+          (error) => {
+            alert( 'message not send');
+          },
+        );
+        e.target.reset()
+    };
 
   return (
     <section className="py-16 bg-custom-gradient  text-white">
-      <div className="container flex gap-6 md:gap-16 bg-gradient-to-r from-[#2c1636] to-[#2c1636]  shadow-lg rounded-lg py-10 px-6 mx-auto ">
+      <div className="container sm:flex-cl md:flex gap-6 md:gap-16 bg-gradient-to-r from-[#2c1636] to-[#2c1636]  shadow-lg rounded-lg py-10 px-6 mx-auto ">
           
           <div className="md:flex-1 ">
           <h2 className=" md:flex-1 md:text-4xl font-bold font-roboto mx-auto text-center mb-8  ">Let’s work together!</h2>
-          <form className="card-body">
+          <form className="card-body" ref={form} onSubmit={sendEmail}>
         <div className="form-control">
         <label className="label">
             <span className="label-text text-white font-semibold">Name</span>
           </label>
-          <input type="text" className='w-full input input-bordered px-4 mb-2 bg-gray-800 rounded'   placeholder="Your Name"  required />
+          <input type="text" className='w-full input input-bordered px-4 mb-2 bg-gray-800 rounded' name='client-name'  placeholder="Your Name"  required />
         </div>
         <div className="form-control">
         <label className="label">
             <span className="label-text text-white font-semibold">Email</span>
           </label>
-          <input type="email" className='w-full input input-bordered px-4 mb-2 bg-gray-800 rounded'   placeholder="Your Email"  required />
+          <input type="email" name='email' className='w-full input input-bordered px-4 mb-2 bg-gray-800 rounded'   placeholder="Your Email"  required />
         </div>
         <div>
         <label className="label">
-            <span className="label-text text-white font-semibold px-4">Massage</span>
+            <span className="label-text text-white font-semibold px-4">Message</span>
           </label>
-        <textarea className="textarea textarea-bordered w-full bg-gray-800" placeholder="Massage"></textarea>
+        <textarea name='message' className="textarea textarea-bordered w-full bg-gray-800" placeholder="Message"></textarea>
         </div>
         
         <div className="form-control mt-6 ">
-        <button className="btn btn-outline btn-primary text-white ">Send Massage</button>
+        <input type="submit" value="Send Message"  className='btn btn-outline btn-primary'/>
         </div>
       </form>
             </div>

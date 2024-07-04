@@ -7,7 +7,7 @@ const Navbar = () => {
   <li className='font-bold md:text-white font-roboto'  ><NavLink to='/skill' className={({isActive})=>isActive?'text-white font-bold':'font-bold'}>Skill</NavLink></li>
   <li className='font-bold md:text-white font-roboto'><NavLink to='/project'>Project</NavLink></li>
   <li className='font-bold md:text-white font-roboto'><NavLink to='/education'>Education</NavLink></li>
-  <li className='font-bold md:text-white font-roboto'><NavLink to='/expe' className={({isActive})=>isActive?'text-white font-bold':'font-bold'}>Experience</NavLink></li>
+  
   <li className='font-bold md:text-white font-roboto'><NavLink to='/contact' className={({isActive})=>isActive?'text-white font-bold':'font-bold'}>Contact</NavLink></li>
   
   </>
