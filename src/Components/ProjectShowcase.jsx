@@ -3,6 +3,16 @@ import React from 'react';
 const ProjectShowcase = () => {
   const projects = [
     {
+      name:'UrbanDrive (Team Project)',
+      image:'',
+      description:'UrbanDrive is a car rental website .where user can easily booked car for take rent . Also they provide their car for rent through with UrbanDrive.',
+      coreFeatures:['Hosting and Approval system with an Admin Panel to review.','Real-Time user support via Live Chat.','Multi Language Support which offers Bengali and English.'],
+      technologies:['TypeScript', 'React', 'Node.js','Express.js', 'MongoDB','Tailwind CSS', 'Firebase','TanStack Query'],
+      liveLink:'https://cheery-bubblegum-eecb30.netlify.app/',
+      clientCodeLink:'https://github.com/aayman01/UrbanDrive-Client',
+      serverCodeLink:'https://github.com/aayman01/UrbanDrive-Server'
+    },
+    {
       name: 'GlamourGlow Beauty',
       image: 'https://i.ibb.co/dcMwBQn/Screenshot-122.png', // Add the image path or URL here
       description: 'This is a beauty service web site. A user can book and add services if they want. Moreover, you can check the booked service status and take the service on time.',
@@ -40,7 +50,7 @@ const ProjectShowcase = () => {
         <h2 className=" text-2xl md:text-4xl font-bold text-center font-roboto mb-8">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
           {projects.map((project, index) => (
-            <div key={index} className=" flex flex-col bg-[#300f3a] shadow-md rounded-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+            <div key={index} className=" flex flex-col bg-[#281870] shadow-md rounded-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
               <img src={project.image} alt={project.name} className="w-full h-48 object-cover rounded mb-4" />
               <h3 className="text-xl font-roboto font-bold mb-2">{project.name}</h3>
               <p className="mb-4 font-roboto">{project.description}</p>
