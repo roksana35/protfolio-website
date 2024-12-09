@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaFacebook } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import { IoMdDownload } from "react-icons/io";
 
 const Banner = () => {
   return (
@@ -11,10 +12,10 @@ const Banner = () => {
      
     >
       <div className="container mx-auto md:m-10 md:p-8 relative z-10">
-        <div className="flex flex-wrap items-center">
+        <div className="flex flex-wrap flex-col-reverse md:flex-row lg:flex-row items-center">
           <div className="w-full md:w-1/2 ">
-            <div className="hero-content-box space-y-5 lg:pl-16">
-              <div>
+            <div className="hero-content-box flex flex-col space-y-5 lg:pl-16 ">
+              <div className="w-full md:w-1/2  text-center lg:text-left ">
                 <motion.p
                   initial={{ x: -100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
@@ -39,9 +40,10 @@ const Banner = () => {
               </div>
               
               
-              <div className=" md:hidden text-center mb-4">
+              <div className=" md:hidden text-center mb-4 w-full md:w-1/2 order-first md:order-last ">
                 <img decoding="async" src={image} alt="ThemeJunction" className="rounded-full  w-[250px] h-[250px] mx-auto border-2 border-emerald-400 shadow-[0_0_50px_rgba(16,185,129,1)] transition-transform duration-300" />
               </div>
+        
               <motion.p
                initial={{ x: -100, opacity: 0 }}
                animate={{ x: 0, opacity: 1 }}
@@ -50,7 +52,7 @@ const Banner = () => {
                  x: { type: "spring", stiffness: 60 },
                  opacity: { duration: 1 },
                }}
-               className="lead mb-6 font-montserrat">
+               className="lead mb-6 font-montserrat text-center lg:text-left">
               I'm a skilled web developer specializing in crafting responsive, dynamic, and intuitive digital solutions. With expertise in HTML, CSS, JavaScript, React, and Node.js, I create seamless user experiences that align with client objectives. Passionate about leveraging innovative frameworks to drive business growth through impactful web development.
               </motion.p>
               <motion.div
@@ -62,9 +64,9 @@ const Banner = () => {
                ease:"easeIn",
                duration:0.5,
              }}
-               className="button-box flex flex-wrap items-center">
+               className="button-box flex flex-wrap justify-center md:justify-start ">
                 <a  href="/Junior Developer of Roksana Akter.pdf" className="btn border-2 border-[#10cc7b] bg-neutral-900 text-white hover:bg-[#10cc7b] hover:text-black hover:border-[#10cc7b]" download={"Junior Developer of Roksana Akter.pdf"}>
-                  Download Resume
+                  Download Resume <span className="text-xl"><IoMdDownload /></span>
                   <i aria-hidden="true" className="tj flaticon flaticon-download ml-2"></i>
                 </a>
                 {/* <ul className="flex space-x-4 mb-4">
@@ -105,6 +107,8 @@ const Banner = () => {
         </div>
       </div>
     </section>
+   
+
   );
 };
 

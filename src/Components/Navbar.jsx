@@ -1,80 +1,137 @@
 
 import {  NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 
 const Navbar = () => {
-  // const navlink=<>
-  // <li className='font-bold md:text-white font-roboto'><NavLink to='/' className={({isActive})=>isActive?'text-white font-bold':'font-bold'} >Home</NavLink></li>
-  // <li className='font-bold md:text-white font-roboto'><NavLink to='/skill' className={({isActive})=>isActive?'text-white font-bold':'font-bold'} >Skills</NavLink></li>
   
-  // <li className='font-bold md:text-white font-roboto'><NavLink to='/project'>Project</NavLink></li>
-  // <li className='font-bold md:text-white font-roboto'><NavLink to='/education'>Education</NavLink></li>
-  
-  // <li className='font-bold md:text-white font-roboto'><NavLink to='/contact' className={({isActive})=>isActive?'text-white font-bold':'font-bold'}>Contact</NavLink></li>
-  
-  // </>
-  const navlink = <>
-    <li className=' font-arimo md:text-white '>
-      <NavLink 
-        to='/' 
-        className={({ isActive }) => 
-          isActive 
-            ? 'text-emerald-400 underline font-bold ' 
-            : 'text-white font-bold hover:text-emerald-400'
-        }
-      >
-        Home
-      </NavLink>
-    </li>
-    <li className=' font-arimo md:text-white '>
-      <NavLink 
-        to='/skill' 
-        className={({ isActive }) => 
-          isActive 
-            ? 'text-emerald-400 underline font-bold ' 
-            : 'text-white font-bold hover:text-emerald-400'
-        }
-      >
-        Skills
-      </NavLink>
-    </li>
-    <li className=' font-arimo md:text-white '>
-      <NavLink 
-        to='/project' 
-        className={({ isActive }) => 
-          isActive 
-            ? 'text-emerald-400 underline font-bold' 
-            : 'text-white font-bold hover:text-emerald-400'
-        }
-      >
-        Project
-      </NavLink>
-    </li>
-    <li className=' font-arimo md:text-white '>
-      <NavLink 
-        to='/education' 
-        className={({ isActive }) => 
-          isActive 
-            ? 'text-emerald-400 underline font-bold' 
-            : 'text-white font-bold hover:text-emerald-400'
-        }
-      >
-        Education
-      </NavLink>
-    </li>
-    <li className=' font-arimo md:text-white '>
-      <NavLink 
-        to='/contact' 
-        className={({ isActive }) => 
-          isActive 
-            ? 'text-emerald-400 underline font-bold' 
-            : 'text-white font-bold hover:text-emerald-400'
-        }
-      >
-        Contact
-      </NavLink>
-    </li>
-  </>;
+  // const navlink = <>
+  //   <li className=' font-arimo md:text-white '>
+  //     <NavLink 
+  //       to='/' 
+  //       className={({ isActive }) => 
+  //         isActive 
+  //           ? 'text-emerald-400 underline font-bold ' 
+  //           : 'text-white font-bold hover:text-emerald-400'
+  //       }
+  //     >
+  //       Home
+  //     </NavLink>
+  //   </li>
+  //   <li className=' font-arimo md:text-white '>
+  //     <NavLink 
+  //       to='/skill' 
+  //       className={({ isActive }) => 
+  //         isActive 
+  //           ? 'text-emerald-400 underline font-bold ' 
+  //           : 'text-white font-bold hover:text-emerald-400'
+  //       }
+  //     >
+  //       Skills
+  //     </NavLink>
+  //   </li>
+  //   <li className=' font-arimo md:text-white '>
+  //     <NavLink 
+  //       to='/project' 
+  //       className={({ isActive }) => 
+  //         isActive 
+  //           ? 'text-emerald-400 underline font-bold' 
+  //           : 'text-white font-bold hover:text-emerald-400'
+  //       }
+  //     >
+  //       Project
+  //     </NavLink>
+  //   </li>
+  //   <li className=' font-arimo md:text-white '>
+  //     <NavLink 
+  //       to='/education' 
+  //       className={({ isActive }) => 
+  //         isActive 
+  //           ? 'text-emerald-400 underline font-bold' 
+  //           : 'text-white font-bold hover:text-emerald-400'
+  //       }
+  //     >
+  //       Education
+  //     </NavLink>
+  //   </li>
+  //   <li className=' font-arimo md:text-white '>
+  //     <NavLink 
+  //       to='/contact' 
+  //       className={({ isActive }) => 
+  //         isActive 
+  //           ? 'text-emerald-400 underline font-bold' 
+  //           : 'text-white font-bold hover:text-emerald-400'
+  //       }
+  //     >
+  //       Contact
+  //     </NavLink>
+  //   </li>
+  // </>;
+
+  const navlink = (
+    <>
+      <li>
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          spy={true}
+          activeClass="text-emerald-400 underline font-bold"
+          className="text-white font-bold hover:text-emerald-400 cursor-pointer"
+        >
+          Home
+        </Link>
+      </li>
+      <li >
+        <Link
+          to="skills"
+          smooth={true}
+          duration={500}
+          spy={true}
+          activeClass="text-emerald-400 underline font-bold"
+          className="text-white font-bold hover:text-emerald-400 cursor-pointer"
+        >
+          Skills
+        </Link>
+      </li>
+      <li >
+        <Link
+          to="projects"
+          smooth={true}
+          duration={500}
+          spy={true}
+          activeClass='text-[#10cc7b] underline font-bold'
+          className="text-white font-bold hover:text-emerald-400 cursor-pointer"
+        >
+          Projects
+        </Link>
+      </li>
+      <li >
+        <Link
+          to="education"
+          smooth={true}
+          duration={500}
+          spy={true}
+          activeClass="text-emerald-400 underline font-bold"
+          className="text-white font-bold hover:text-emerald-400 cursor-pointer"
+        >
+          Education
+        </Link>
+      </li>
+      <li >
+        <Link
+          to="contact"
+          smooth={true}
+          duration={500}
+          spy={true}
+          activeClass="underline text-[#10cc7b]"
+          className="text-white font-bold hover:text-emerald-400 cursor-pointer"
+        >
+          Contact
+        </Link>
+      </li>
+    </>
+  );
 
   return (
     <div className="navbar bg-neutral-900 lg:pl-14 lg:pr-14 lg:pt-14 lg:pb-8  top-0 h-[78px] sticky z-50 ">
